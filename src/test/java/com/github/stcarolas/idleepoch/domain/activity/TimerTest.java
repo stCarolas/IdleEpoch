@@ -1,16 +1,12 @@
-package  com.github.stcarolas.idleepoch.domain.activity;
+package com.github.stcarolas.idleepoch.domain.activity;
 
 import org.junit.jupiter.api.Test;
-
 import io.vavr.Function3;
-
 import static org.mockito.BDDMockito.*;
-
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
 public class TimerTest {
-
   TestScheduler scheduler = new TestScheduler();
   Timer timer = new Timer(scheduler);
 
@@ -30,6 +26,15 @@ public class TimerTest {
   }
 
   @Test
+  public void testRunAllActivities() {
+    Tickable action1 = createScheduledActivity();
+    Tickable action2 = createScheduledActivity();
+    scheduler.run();
+    verify(action1).tick();
+    verify(action2).tick();
+  }
+
+  @Test
   public void testRemoveActivityWhileOtherStillWorks() {
     Tickable action1 = createScheduledActivity();
     Tickable action2 = createScheduledActivity();
@@ -38,14 +43,15 @@ public class TimerTest {
     verify(action2).tick();
   }
 
-  private Tickable createScheduledActivity(){
+  private Tickable createScheduledActivity() {
     Tickable action = mock(Tickable.class);
     timer.addActivity(action);
     return action;
   }
 
-  public static class TestScheduler implements Function3<Runnable, Long, TimeUnit, ScheduledFuture<?>>{
-
+  public static class TestScheduler
+    implements Function3<Runnable, Long, TimeUnit, ScheduledFuture<?>> {
+    private static final long serialVersionUID = 1L;
     private Runnable runnable;
 
     @Override
@@ -54,10 +60,8 @@ public class TimerTest {
       return mock(ScheduledFuture.class);
     }
 
-    public void run(){
+    public void run() {
       runnable.run();
     }
-
   }
-
 }

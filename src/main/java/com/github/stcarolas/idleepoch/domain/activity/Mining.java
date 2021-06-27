@@ -1,4 +1,4 @@
-package com.github.stcarolas.idleepoch.domain.activity;
+package  com.github.stcarolas.idleepoch.domain.activity;
 
 import javax.inject.Inject;
 
@@ -8,11 +8,10 @@ import com.github.stcarolas.enrichedbeans.annotations.Assisted;
 
 import org.immutables.value.Value.Immutable;
 
-@JsonSerialize(as = ImmutableWoodcutting.class)
-@JsonDeserialize(as = ImmutableWoodcutting.class, builder = ImmutableWoodcutting.Builder.class)
+@JsonSerialize(as = ImmutableMining.class)
+@JsonDeserialize(as = ImmutableMining.class,builder = ImmutableMining.Builder.class)
 @Assisted(useBuilder = true)
-@Immutable public abstract class Woodcutting implements Activity {
-
+@Immutable public interface Mining {
   abstract Target target();
   @Inject abstract public Timer timer();
 
@@ -30,7 +29,7 @@ import org.immutables.value.Value.Immutable;
   }
 
   public static enum Target{
-    OAK,PINE,MAPLE
+    COPPER, CLAY, STONE, IRON
   }
 
 }

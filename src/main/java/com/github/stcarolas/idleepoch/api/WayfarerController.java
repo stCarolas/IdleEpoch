@@ -1,4 +1,4 @@
-package  com.github.stcarolas.idlewayfarer.api;
+package  com.github.stcarolas.idleepoch.api;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

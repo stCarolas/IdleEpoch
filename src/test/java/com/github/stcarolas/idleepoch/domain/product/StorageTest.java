@@ -1,14 +1,13 @@
-package  com.github.stcarolas.idleepoch.domain.product;
+package com.github.stcarolas.idleepoch.domain.product;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-
 import io.vavr.control.Option;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class StorageTest {
-  Product product = new Product(){
+  Product product = new Product() {
+
     @Override
     public String name() {
       return "TestProduct";
@@ -54,14 +53,15 @@ public class StorageTest {
     assertTrue(
       storage.removeProduct(
         new Product() {
+
           @Override
           public String name() {
             return "AnotherProduct";
           }
-        }, 
+        },
         1L
-      ).isFailure()
+      )
+        .isFailure()
     );
   }
-  
 }

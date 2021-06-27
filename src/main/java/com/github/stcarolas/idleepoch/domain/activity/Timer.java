@@ -3,14 +3,19 @@ package  com.github.stcarolas.idleepoch.domain.activity;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+
 import io.vavr.Function3;
 import io.vavr.collection.List;
 import static io.vavr.API.*;
 
+@Named
 public class Timer implements Runnable {
 
   private List<Tickable> activities = List();
 
+  @Inject
   public Timer(Function3<Runnable, Long, TimeUnit, ScheduledFuture<?>> scheduler){
     scheduler.apply(this, 1L, TimeUnit.SECONDS);
   }

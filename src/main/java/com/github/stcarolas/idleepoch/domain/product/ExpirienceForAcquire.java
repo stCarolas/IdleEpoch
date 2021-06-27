@@ -1,4 +1,4 @@
-package  com.github.stcarolas.idleepoch.domain.product;
+package com.github.stcarolas.idleepoch.domain.product;
 
 import java.math.BigDecimal;
 

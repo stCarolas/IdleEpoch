@@ -1,4 +1,3 @@
-package  com.github.stcarolas.idleepoch.domain.product.wood;
+package com.github.stcarolas.idleepoch.domain.product.wood;
 
-public interface Wood {
-}
+public interface Wood {}

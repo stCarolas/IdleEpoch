@@ -4,7 +4,7 @@ import javax.inject.Inject;
 import com.github.stcarolas.enrichedbeans.annotations.Assisted;
 import com.github.stcarolas.idleepoch.domain.activity.Activity;
 import com.github.stcarolas.idleepoch.domain.activity.Timer;
-import com.github.stcarolas.idleepoch.domain.product.Storage;
+import com.github.stcarolas.idleepoch.domain.product.storage.Storage;
 import com.github.stcarolas.idleepoch.domain.wayfarer.Wayfarer;
 
 import org.immutables.value.Value.Immutable;
@@ -17,9 +17,7 @@ public abstract class Mining implements Activity {
   @Inject
   abstract public Timer timer();
 
-  @Inject
   abstract public Storage storage();
-
   abstract public Mine mine();
   abstract public Wayfarer miner();
 

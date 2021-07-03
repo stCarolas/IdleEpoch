@@ -1,0 +1,2 @@
+# IdleEpoch
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f3d7a07c59b74af3b5311ae251f549c2)](https://app.codacy.com/gh/stCarolas/IdleEpoch?utm_source=github.com&utm_medium=referral&utm_content=stCarolas/IdleEpoch&utm_campaign=Badge_Grade_Settings)

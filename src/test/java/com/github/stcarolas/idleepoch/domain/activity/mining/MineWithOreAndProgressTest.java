@@ -38,7 +38,7 @@ public class MineWithOreAndProgressTest {
 
   public static class TestMine extends MineWithOreAndProgress {
     public static final long LABOR_INTENSITY = 30L;
-    public static final Copper PRODUCT = new Copper();
+    public static final Copper PRODUCT = Copper.of();
 
     @Override
     protected Long laborIntensity() {

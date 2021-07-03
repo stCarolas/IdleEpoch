@@ -4,7 +4,6 @@ import com.github.stcarolas.idleepoch.domain.product.ore.Copper;
 import com.github.stcarolas.idleepoch.domain.product.ore.Ore;
 
 public class CopperMine extends MineWithOreAndProgress {
-  private static final Copper copper = new Copper();
 
   @Override
   protected Long laborIntensity() {
@@ -13,6 +12,6 @@ public class CopperMine extends MineWithOreAndProgress {
 
   @Override
   protected Ore product() {
-    return copper;
+    return Copper.of();
   }
 }

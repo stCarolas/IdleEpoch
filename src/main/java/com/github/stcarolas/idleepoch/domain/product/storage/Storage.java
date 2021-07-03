@@ -1,12 +1,15 @@
 package com.github.stcarolas.idleepoch.domain.product.storage;
 
+import io.vavr.collection.List;
+import io.vavr.control.Option;
 import io.vavr.control.Try;
 import com.github.stcarolas.idleepoch.domain.product.Product;
 import com.github.stcarolas.idleepoch.domain.product.Package;
 
-public abstract class Storage {
+public interface Storage {
+  String ownerId();
 
-  abstract String ownerId();
-
-  public abstract Try<?> addPackage(Package<? extends Product> pack);
+  Try<?> addPackage(Package<? extends Product> pack);
+  Try<List<Package<Product>>> products();
+  Try<Option<Package<Product>>> findPackageOf(Product product);
 }

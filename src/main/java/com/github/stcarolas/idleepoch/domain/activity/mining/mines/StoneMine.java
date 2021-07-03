@@ -1,9 +1,10 @@
-package com.github.stcarolas.idleepoch.domain.activity.mining;
+package com.github.stcarolas.idleepoch.domain.activity.mining.mines;
 
+import com.github.stcarolas.idleepoch.domain.activity.mining.MineImpl;
 import com.github.stcarolas.idleepoch.domain.product.ore.Ore;
 import com.github.stcarolas.idleepoch.domain.product.ore.Stone;
 
-public class StoneMine extends MineWithOreAndProgress {
+public class StoneMine extends MineImpl {
   private static final Stone stone = new Stone();
 
   @Override

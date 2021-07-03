@@ -1,9 +1,9 @@
-package com.github.stcarolas.idleepoch.domain.product.storage;
+package com.github.stcarolas.idleepoch.domain.storage;
 
 import org.junit.jupiter.api.Test;
 
 import com.github.stcarolas.idleepoch.TestWithDatabase;
-import com.github.stcarolas.idleepoch.domain.product.ImmutablePackage;
+import com.github.stcarolas.idleepoch.domain.product.ImmutablePack;
 import com.github.stcarolas.idleepoch.domain.product.ProductFactory;
 import com.github.stcarolas.idleepoch.domain.product.ore.Copper;
 import org.apache.commons.lang3.RandomStringUtils;
@@ -24,9 +24,9 @@ public class StorageImplTest extends TestWithDatabase {
       .ownerId(ownerId)
       .productFactory(productFactory)
       .build();
-    storage.addPackage(ImmutablePackage.of(productAmount, product));
+    storage.addPack(ImmutablePack.of(productAmount, product));
     assertEquals(
-      Success(List(ImmutablePackage.of(productAmount, product))),
+      Success(List(ImmutablePack.of(productAmount, product))),
       storage.products()
     );
   }
@@ -42,10 +42,10 @@ public class StorageImplTest extends TestWithDatabase {
       .ownerId(ownerId)
       .productFactory(productFactory)
       .build();
-    storage.addPackage(ImmutablePackage.of(productAmount, product));
+    storage.addPack(ImmutablePack.of(productAmount, product));
     assertEquals(
-      Success(Some(ImmutablePackage.of(productAmount, product))),
-      storage.findPackageOf(product)
+      Success(Some(ImmutablePack.of(productAmount, product))),
+      storage.findPackOf(product)
     );
   }
 

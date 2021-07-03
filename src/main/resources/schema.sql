@@ -13,6 +13,14 @@ create table storages
   primary key(id)
 );
 
+create table mines
+(
+  id varchar(255) not null,
+  ore_name varchar(255) not null,
+  progress int,
+  primary key(id)
+);
+
 create table storage_products
 (
   villager_id varchar(255) not null,

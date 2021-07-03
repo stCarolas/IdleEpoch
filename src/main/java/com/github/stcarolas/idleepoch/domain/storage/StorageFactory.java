@@ -1,4 +1,4 @@
-package com.github.stcarolas.idleepoch.domain.product.storage;
+package com.github.stcarolas.idleepoch.domain.storage;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -18,6 +18,7 @@ public class StorageFactory {
 
   public Storage of(String ownerId) {
     return ImmutableStorageImpl.builder()
+      .ownerId(ownerId)
       .productFactory(productFactory)
       .jdbc(jdbc)
       .build();

@@ -1,4 +1,4 @@
-package com.github.stcarolas.idleepoch.domain.activity;
+package com.github.stcarolas.idleepoch.domain.scheduler;
 
 import org.junit.jupiter.api.Test;
 import io.vavr.Function3;

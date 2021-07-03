@@ -3,27 +3,25 @@ package com.github.stcarolas.idleepoch.domain.activity.mining;
 import javax.inject.Inject;
 import com.github.stcarolas.enrichedbeans.annotations.Assisted;
 import com.github.stcarolas.idleepoch.domain.activity.Activity;
-import com.github.stcarolas.idleepoch.domain.activity.Timer;
-import com.github.stcarolas.idleepoch.domain.product.storage.Storage;
+import com.github.stcarolas.idleepoch.domain.scheduler.Timer;
 import com.github.stcarolas.idleepoch.domain.villager.Villager;
-
 import org.immutables.value.Value.Immutable;
 
-@Assisted(useBuilder = true, assistAllInjectedFields = true)
 @Immutable
+@Assisted(useBuilder = true, assistAllInjectedFields = true)
 public abstract class Mining implements Activity {
   private final Long DEFAULT_PRODUCTIVITY = 1L;
 
   @Inject
-  abstract public Timer timer();
+  abstract Timer timer();
 
-  abstract public Storage storage();
   abstract public Mine mine();
+
   abstract public Villager miner();
 
   @Override
   public void tick() {
-    storage().addPackage(mine().mine(DEFAULT_PRODUCTIVITY));
+    mine().mine(DEFAULT_PRODUCTIVITY).forEach(pack -> miner().give(pack));
   }
 
   @Override

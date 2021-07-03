@@ -1,15 +1,13 @@
-package com.github.stcarolas.idleepoch.domain.activity;
+package com.github.stcarolas.idleepoch.domain.activity.woodcutting;
 
 import javax.inject.Inject;
 
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.github.stcarolas.enrichedbeans.annotations.Assisted;
+import com.github.stcarolas.idleepoch.domain.activity.Activity;
+import com.github.stcarolas.idleepoch.domain.scheduler.Timer;
 
 import org.immutables.value.Value.Immutable;
 
-@JsonSerialize(as = ImmutableWoodcutting.class)
-@JsonDeserialize(as = ImmutableWoodcutting.class, builder = ImmutableWoodcutting.Builder.class)
 @Assisted(useBuilder = true)
 @Immutable public abstract class Woodcutting implements Activity {
 

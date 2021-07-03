@@ -1,4 +1,4 @@
-package  com.github.stcarolas.idleepoch.domain.activity;
+package  com.github.stcarolas.idleepoch.domain.scheduler;
 
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ScheduledThreadPoolExecutor;

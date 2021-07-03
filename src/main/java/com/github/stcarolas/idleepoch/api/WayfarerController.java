@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/wayfarer/{id}/activity")
+@RequestMapping("/villager/{id}/activity")
 public class WayfarerController {
   static final Logger log = LogManager.getLogger();
 

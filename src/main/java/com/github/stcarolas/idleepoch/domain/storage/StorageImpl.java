@@ -1,9 +1,9 @@
-package com.github.stcarolas.idleepoch.domain.product.storage;
+package com.github.stcarolas.idleepoch.domain.storage;
 
 import com.github.stcarolas.idleepoch.domain.product.Product;
 import com.github.stcarolas.idleepoch.domain.product.ProductFactory;
-import com.github.stcarolas.idleepoch.domain.product.ImmutablePackage;
-import com.github.stcarolas.idleepoch.domain.product.Package;
+import com.github.stcarolas.idleepoch.domain.product.ImmutablePack;
+import com.github.stcarolas.idleepoch.domain.product.Pack;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.immutables.value.Value.Immutable;
@@ -21,18 +21,18 @@ public abstract class StorageImpl implements Storage {
   abstract JdbcTemplate jdbc();
   abstract ProductFactory productFactory();
 
-  private RowMapper<Package<Product>> packageMapper = (rs, rowNum) -> {
+  private RowMapper<Pack<Product>> packageMapper = (rs, rowNum) -> {
     Product product = productFactory()
       .byName(rs.getString("name"))
       .getOrElseThrow(() -> new RuntimeException("wrong product name"));
-    return ImmutablePackage.<Product>builder()
+    return ImmutablePack.<Product>builder()
       .product(product)
       .amount(rs.getLong("amount"))
       .build();
   };
 
   @Override
-  public Try<?> addPackage(Package<? extends Product> pack) {
+  public Try<?> addPack(Pack<? extends Product> pack) {
     return Try(
       () -> jdbc()
         .update(
@@ -46,7 +46,7 @@ public abstract class StorageImpl implements Storage {
   }
 
   @Override
-  public Try<List<Package<Product>>> products() {
+  public Try<List<Pack<Product>>> products() {
     return Try(
       () -> jdbc()
         .query(
@@ -60,7 +60,7 @@ public abstract class StorageImpl implements Storage {
   }
 
   @Override
-  public Try<Option<Package<Product>>> findPackageOf(Product product) {
+  public Try<Option<Pack<Product>>> findPackOf(Product product) {
     return Try(
       () -> jdbc()
         .queryForObject(

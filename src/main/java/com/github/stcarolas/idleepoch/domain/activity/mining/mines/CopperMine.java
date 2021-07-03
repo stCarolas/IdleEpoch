@@ -1,9 +1,10 @@
-package com.github.stcarolas.idleepoch.domain.activity.mining;
+package com.github.stcarolas.idleepoch.domain.activity.mining.mines;
 
+import com.github.stcarolas.idleepoch.domain.activity.mining.MineImpl;
 import com.github.stcarolas.idleepoch.domain.product.ore.Copper;
 import com.github.stcarolas.idleepoch.domain.product.ore.Ore;
 
-public class CopperMine extends MineWithOreAndProgress {
+public class CopperMine extends MineImpl {
 
   @Override
   protected Long laborIntensity() {

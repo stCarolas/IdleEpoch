@@ -8,11 +8,11 @@ import com.github.stcarolas.idleepoch.domain.product.Pack;
 
 public abstract class Mine {
 
-  //abstract protected String id();
+  abstract public String id();
 
-  abstract protected Long laborIntensity();
+  abstract public Long laborIntensity();
 
-  abstract protected Ore product();
+  abstract public Ore product();
 
-  abstract Try<Pack<Ore>> mine(Long progress);
+  abstract public Try<Pack<Ore>> mine(Long progress);
 }

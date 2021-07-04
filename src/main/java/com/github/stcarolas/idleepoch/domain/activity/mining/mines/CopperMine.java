@@ -4,15 +4,18 @@ import com.github.stcarolas.idleepoch.domain.activity.mining.MineImpl;
 import com.github.stcarolas.idleepoch.domain.product.ore.Copper;
 import com.github.stcarolas.idleepoch.domain.product.ore.Ore;
 
-public class CopperMine extends MineImpl {
+import org.immutables.value.Value.Immutable;
+
+@Immutable
+public abstract class CopperMine extends MineImpl {
 
   @Override
-  protected Long laborIntensity() {
+  public Long laborIntensity() {
     return 30L;
   }
 
   @Override
-  protected Ore product() {
+  public Ore product() {
     return Copper.of();
   }
 }

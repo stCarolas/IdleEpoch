@@ -17,7 +17,8 @@ create table mines
 (
   id varchar(255) not null,
   ore_name varchar(255) not null,
-  progress int,
+  progress bigint,
+  labor_intensity bigint,
   primary key(id)
 );
 

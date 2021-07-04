@@ -4,16 +4,19 @@ import com.github.stcarolas.idleepoch.domain.activity.mining.MineImpl;
 import com.github.stcarolas.idleepoch.domain.product.ore.Ore;
 import com.github.stcarolas.idleepoch.domain.product.ore.Stone;
 
-public class StoneMine extends MineImpl {
+import org.immutables.value.Value.Immutable;
+
+@Immutable
+public abstract class StoneMine extends MineImpl {
   private static final Stone stone = new Stone();
 
   @Override
-  protected Long laborIntensity() {
+  public Long laborIntensity() {
     return 30L;
   }
 
   @Override
-  protected Ore product() {
+  public Ore product() {
     return stone;
   }
 }

@@ -8,7 +8,7 @@ import com.github.stcarolas.idleepoch.domain.villager.Villager;
 import org.immutables.value.Value.Immutable;
 
 @Immutable
-@Assisted(useBuilder = true, assistAllInjectedFields = true)
+@Assisted(useBuilder = true)
 public abstract class Mining implements Activity {
   private final Long DEFAULT_PRODUCTIVITY = 1L;
 

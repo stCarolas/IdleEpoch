@@ -13,6 +13,13 @@ create table storages
   primary key(id)
 );
 
+create table storage_products
+(
+  villager_id varchar(255) not null,
+  name varchar(255) not null,
+  amount long
+);
+
 create table mines
 (
   id varchar(255) not null,
@@ -20,11 +27,4 @@ create table mines
   progress bigint,
   labor_intensity bigint,
   primary key(id)
-);
-
-create table storage_products
-(
-  villager_id varchar(255) not null,
-  name varchar(255) not null,
-  amount long
 );

@@ -38,7 +38,7 @@ dependencies:
 
   - groupId:    com.github.stcarolas.enriched-beans
     artifactId: enriched-beans-annotations
-    version:    0.3.6
+    version:    0.3.7
 
   - groupId:    org.junit.jupiter
     artifactId: junit-jupiter-engine
@@ -83,7 +83,7 @@ build:
 
         - groupId:    com.github.stcarolas.enriched-beans
           artifactId: enriched-beans-processor
-          version:    0.3.6
+          version:    0.3.7
 
   - groupId: org.springframework.boot
     artifactId: spring-boot-maven-plugin

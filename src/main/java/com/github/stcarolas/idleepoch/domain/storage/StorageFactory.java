@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 @Named("StorageFactory")
 public class StorageFactory {
+
   private JdbcTemplate jdbc;
   private ProductFactory productFactory;
 

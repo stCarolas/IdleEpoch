@@ -6,6 +6,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @RequestMapping("/wayfarer/{id}/activity/mining")
@@ -17,7 +18,7 @@ public class MiningController {
     this.factory = factory;
   }
 
-  @PostMapping
-  public void target(@PathVariable("id") String wayfarerId) {
+  @PutMapping
+  public void create(@PathVariable("id") String wayfarerId) {
   }
 }
